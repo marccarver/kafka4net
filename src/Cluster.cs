@@ -492,7 +492,7 @@ namespace kafka4net
                 Replay(Scheduler);
             pipeline.Connect();
             var pipeline2 = pipeline.Merge();
-            return Subject.Create(subj, pipeline2);
+            return Subject.Create<BrokerMeta, BrokerMeta>(subj, pipeline2);
         }
 
         #endregion NewBrokers observable
